@@ -1,4 +1,9 @@
 {
   "editor.formatOnSave": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "json.schemas": [
+    {
+      "fileMatch": ["data/raw.json"],
+      "url": "/data/schema.json"
+    }
+  ]
 }

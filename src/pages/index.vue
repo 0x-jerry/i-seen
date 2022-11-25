@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-const count = ref(0)
+import type { CardProps } from '@/components/Card.vue'
+import db from '../../data/db.json'
+
+const data: CardProps[] = db
 </script>
 
 <template>
-  <div class="flex items-center w-screen h-screen gap-2">
-    <span>Hello, you can start with a counter: </span>
-    <KButton @click="count++">+1</KButton>
-    <span>
-      {{ count }}
-    </span>
-    <KButton @click="count++">+1</KButton>
+  <div class="text-4xl mt-30px ml-50px">I Seen</div>
+  <hr class="border-0 border-(t gray-3) mb-4" />
+  <div class="px-50px flex flex-wrap gap-4">
+    <Card v-for="item in data" v-bind="item"></Card>
   </div>
 </template>
 

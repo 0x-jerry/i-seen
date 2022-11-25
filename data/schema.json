@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "SharedItem": {
+            "properties": {
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "wiki": {
+                    "description": "wiki title",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "items": {
+        "$ref": "#/definitions/SharedItem"
+    },
+    "type": "array"
+}
+

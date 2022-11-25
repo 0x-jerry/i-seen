@@ -3,23 +3,30 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "setup": "cd kit && npm run build"
+    "setup": "cd kit && npm run build",
+    "gen:schema": "typescript-json-schema data/type.d.ts Schema -o data/schema.json",
+    "gen:db": "tsx data/update.ts"
   },
   "dependencies": {
     "@0x-jerry/utils": "^1.12.4",
     "@0x-jerry/vue-kit": "workspace:*",
     "@vueuse/core": "^9.6.0",
     "normalize.css": "^8.0.1",
+    "overlayscrollbars": "^2.0.1",
+    "overlayscrollbars-vue": "^0.5.0",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6",
-    "wikipedia": "^1.1.9"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@iconify/json": "^2.1.143",
     "@types/node": "^18.11.9",
     "@vitejs/plugin-vue": "^3.2.0",
+    "got": "^12.5.3",
+    "https-proxy-agent": "^5.0.1",
     "less": "^4.1.3",
+    "tsx": "^3.12.1",
     "typescript": "^4.9.3",
+    "typescript-json-schema": "^0.55.0",
     "unocss": "0.46.5",
     "unplugin-auto-import": "^0.11.5",
     "unplugin-icons": "^0.14.14",
