@@ -2,7 +2,7 @@
   "editor.formatOnSave": true,
   "json.schemas": [
     {
-      "fileMatch": ["data/raw.json"],
+      "fileMatch": ["data/db.json"],
       "url": "/data/schema.json"
     }
   ]

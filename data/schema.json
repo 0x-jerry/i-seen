@@ -3,14 +3,27 @@
     "definitions": {
         "SharedItem": {
             "properties": {
+                "cover": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "links": {
+                    "properties": {
+                        "douban": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
                 "tags": {
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
                 },
-                "wiki": {
-                    "description": "wiki title",
+                "title": {
                     "type": "string"
                 }
             },

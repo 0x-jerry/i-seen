@@ -1,8 +1,24 @@
 [
   {
-    "title": "再見了，橡果兄弟！－奇蹟的暑假－",
-    "cover": "https://upload.wikimedia.org/wikipedia/zh/a/a7/Goodbye%2C_Don_Glees%21.jpg",
+    "title": "再见了，橡果兄弟！－奇迹的暑假－",
+    "cover": "images/p2681325036.webp",
     "description": "《再见了，橡果兄弟！－奇迹的暑假－》 是于2022年2月18日上映的日本动画电影，由石冢敦子编剧和执导，制作人员基本沿袭2018年电视动画《比宇宙更远的地方》的阵容。故事讲述少年朗真（鸭川朗真）与同龄少年斗斗（御手洗北斗）组成名叫“橡果兄弟 ”的小队，与后来加入团队的少年多洛普（佐久间雫）成为朋友，但因为意外被误认为酿成山林火灾的犯人，为了证明三人无罪展开行动所延伸的经历。",
-    "wikiUrl": "https://zh.wikipedia.org/wiki/%E5%86%8D%E8%A6%8B%E4%BA%86%EF%BC%8C%E6%A9%A1%E6%9E%9C%E5%85%84%E5%BC%9F%EF%BC%81%EF%BC%8D%E5%A5%87%E8%B9%9F%E7%9A%84%E6%9A%91%E5%81%87%EF%BC%8D"
+    "tags": [
+      "movie"
+    ],
+    "links": {
+      "douban": "https://movie.douban.com/subject/30198955/"
+    }
+  },
+  {
+    "title": "边缘世界",
+    "cover": "images/p2879947754.webp",
+    "description": "《边缘世界》（英语：The Peripheral）是一部科幻类型的美国网络影集，改编自威廉·吉布森创作的同名小说，由斯科特·史密斯开创，他与乔纳森·诺兰、丽莎·乔伊、雅典娜·韦翰（Athena Wickham）、史蒂芬·霍本、温琴佐·纳塔利和克雷格·普拉格曼（Greg Plageman）担当执行制片人。科洛·莫瑞兹领衔出演女主角芙林·费雪，主演还包括盖瑞·卡尔、杰克·雷诺、伊莱·戈雷、夏洛特·莱利、约翰·约瑟夫·菲尔德、阿德林德·霍兰、媞妮亚·米勒和艾力克斯·赫南德兹。影集2022年10月21日于亚马逊影片首播。",
+    "links": {
+      "douban": "https://movie.douban.com/subject/30198955/"
+    },
+    "tags": [
+      "TV series"
+    ]
   }
 ]
