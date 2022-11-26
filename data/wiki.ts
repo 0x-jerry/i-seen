@@ -52,12 +52,15 @@ export interface Titles {
   display?: string
 }
 
+const proxy = process.env.HTTP_PROXY
+const agent = proxy ? createHttpsProxyAgent(process.env.HTTPS_PROXY) : undefined
+
 export async function wikiSummary(title: string, opt: {} = {}) {
   const url = 'https://zh.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title)
 
   const resp = await got(url, {
     agent: {
-      https: createHttpsProxyAgent(process.env.HTTPS_PROXY),
+      https: agent,
     },
     headers: {
       'Accept-Language': 'zh-hans',
