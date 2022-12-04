@@ -18,7 +18,7 @@ const props = defineProps<CardProps>()
 
 const zIndex = ref(nextZIndex.value)
 
-function next() {
+function updateZIndex() {
   zIndex.value = nextZIndex.value++
 }
 
@@ -32,6 +32,8 @@ onMounted(() => {
 
   const x = el.offsetLeft + 900
   isReverse.value = x > window.innerWidth
+
+  updateZIndex()
 })
 
 const mouse = useMouseInElement(el, {
@@ -90,7 +92,7 @@ const coverStyle = computed(() => {
     </div>
 
     <div class="overlay-wrapper">
-      <div class="overlay" @mouseenter="next()" ref="el">
+      <div class="overlay" @mouseenter="updateZIndex()" ref="el">
         <div class="cover" :style="coverStyle" />
         <div class="intro h-400px flex-(~ 1 col) w-0 py-6">
           <div class="title text-2xl px-4 font-bold">
@@ -105,7 +107,7 @@ const coverStyle = computed(() => {
           >
             {{ description }}
           </OverlayScrollbarsComponent>
-          <div class="px-4 flex gap-4">
+          <div class="links px-4 flex gap-4">
             <a
               class="w-24px h-24px rounded-full border-(~ solid current) flex items-center justify-center cursor-pointer text-green-5 hover:text-green-6"
               :href="links?.douban"
@@ -143,6 +145,10 @@ const coverStyle = computed(() => {
         .intro {
           left: 0;
           right: unset;
+
+          .links {
+            flex-direction: row-reverse;
+          }
         }
       }
     }

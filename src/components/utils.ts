@@ -1,1 +1,1 @@
-export const nextZIndex = ref(0)
+export const nextZIndex = ref(1)
