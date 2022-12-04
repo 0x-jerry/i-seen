@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { getTagColor } from '@/data'
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue'
 import Tag from './Tag.vue'
 import { nextZIndex } from './utils'
@@ -14,12 +15,6 @@ export interface CardProps {
 }
 
 const props = defineProps<CardProps>()
-
-const tagColors: Record<string, string> = {
-  movie: 'red',
-}
-
-const getTagColor = (tag: string) => tagColors[tag] as any
 
 const zIndex = ref(nextZIndex.value)
 
