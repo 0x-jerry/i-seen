@@ -28,6 +28,17 @@ function next() {
 }
 
 const el = ref<HTMLElement>()
+const rootEl = ref<HTMLElement>()
+const isReverse = ref(false)
+
+onMounted(() => {
+  const el = rootEl.value
+  if (!el) return
+
+  const x = el.offsetLeft + 900
+  isReverse.value = x > window.innerWidth
+})
+
 const mouse = useMouseInElement(el, {
   type: 'client',
   handleOutside: false,
@@ -75,7 +86,7 @@ const coverStyle = computed(() => {
 </script>
 
 <template>
-  <div class="card relative" :style="{ zIndex }">
+  <div class="card relative" :class="{ 'is-reverse': isReverse }" :style="{ zIndex }" ref="rootEl">
     <div class="content">
       <div class="cover"></div>
       <div class="short-description mt-4">
@@ -118,7 +129,29 @@ const coverStyle = computed(() => {
 @cover-width: 300px;
 
 .card {
-  width: @cover-width;
+  width: @cover-width * 0.8;
+
+  &.is-reverse {
+    .overlay-wrapper {
+      left: unset;
+      right: 0;
+
+      .overlay {
+        left: unset;
+        right: 0;
+
+        .cover {
+          left: unset;
+          right: 0;
+        }
+
+        .intro {
+          left: 0;
+          right: unset;
+        }
+      }
+    }
+  }
 }
 
 .overlay-wrapper {
@@ -127,6 +160,8 @@ const coverStyle = computed(() => {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .cover {
