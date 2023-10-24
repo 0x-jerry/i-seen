@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@0x-jerry/utils": "^1.12.4",
-    "@0x-jerry/vue-kit": "workspace:*",
     "@vueuse/core": "^9.6.0",
     "normalize.css": "^8.0.1",
     "overlayscrollbars": "^2.0.1",
