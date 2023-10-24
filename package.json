@@ -1,6 +1,6 @@
 {
   "name": "i-seen",
-  "description": "Some interesting videos.",
+  "description": "Some interesting videos or video games.",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
