@@ -1,12 +1,11 @@
 {
   "name": "i-seen",
-  "description": "Template for vue project.",
+  "description": "Some interesting videos.",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "setup": "cd kit && npm run build",
     "gen:schema": "typescript-json-schema data/type.d.ts Schema -o data/schema.json",
     "gen:db": "tsx data/update.ts"
   },
