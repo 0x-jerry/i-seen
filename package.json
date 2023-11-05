@@ -23,8 +23,6 @@
     "@iconify/json": "^2.2.132",
     "@types/node": "^20.8.8",
     "@vitejs/plugin-vue": "^4.4.0",
-    "got": "^13.0.0",
-    "https-proxy-agent": "^7.0.2",
     "less": "^4.2.0",
     "tsx": "^3.14.0",
     "typescript": "^5.2.2",
@@ -34,7 +32,6 @@
     "unplugin-icons": "^0.17.1",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.5.0",
-    "vite-plugin-mkcert": "1.16.0",
     "vite-plugin-pages": "^0.31.0",
     "vitest": "^0.34.6"
   }
