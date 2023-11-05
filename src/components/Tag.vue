@@ -14,7 +14,7 @@ defineProps<TagProps>()
 
 <style lang="less">
 .tag {
-  @apply text-sm px-2 border-(~ current) rounded-full;
+  @apply text-sm px-2 border-(1 solid current) rounded-full;
   @apply text-gray-6;
 
   &.blue {
