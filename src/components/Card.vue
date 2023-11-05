@@ -27,14 +27,19 @@ const rootEl = ref<HTMLElement>()
 const isReverse = ref(false)
 
 onMounted(() => {
+  resize()
+  updateZIndex()
+})
+
+function resize() {
   const el = rootEl.value
   if (!el) return
 
   const x = el.offsetLeft + 900
   isReverse.value = x > window.innerWidth
+}
 
-  updateZIndex()
-})
+useEventListener('resize', resize)
 
 const mouse = useMouseInElement(el, {
   type: 'client',
@@ -124,6 +129,10 @@ const coverStyle = computed(() => {
 
 <style lang="less">
 @cover-width: 300px;
+
+.description {
+  line-height: 1.5em;
+}
 
 .card {
   width: @cover-width * 0.8;
