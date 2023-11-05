@@ -15,26 +15,26 @@ defineProps<TagProps>()
 <style lang="less">
 .tag {
   @apply text-sm px-2 border-(~ current) rounded-full;
-  @apply text-gray-5 opacity-70;
+  @apply text-gray-6;
 
   &.blue {
-    @apply text-blue-5;
+    @apply text-blue-6;
   }
 
   &.green {
-    @apply text-green-5;
+    @apply text-green-6;
   }
 
   &.red {
-    @apply text-red-5;
+    @apply text-red-6;
   }
 
   &.purple {
-    @apply text-purple-5;
+    @apply text-purple-6;
   }
 
   &.yellow {
-    @apply text-yellow-5;
+    @apply text-yellow-6;
   }
 }
 </style>
