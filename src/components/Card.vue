@@ -41,6 +41,8 @@ function resize() {
 
 useEventListener('resize', resize)
 
+const isHover = useElementHover(rootEl)
+
 const mouse = useMouseInElement(el, {
   type: 'client',
   handleOutside: false,
@@ -60,9 +62,16 @@ const pos = computed(() => {
   const y = yy - 0.5
   const x = xx - 0.5
 
+  if (isHover.value) {
+    return {
+      x,
+      y,
+    }
+  }
+
   return {
-    x,
-    y,
+    x: 0,
+    y: 0,
   }
 })
 
@@ -159,6 +168,12 @@ const coverStyle = computed(() => {
             flex-direction: row-reverse;
           }
         }
+
+        &:hover {
+          .cover {
+            @apply border-(0 l solid blue);
+          }
+        }
       }
     }
   }
@@ -231,6 +246,8 @@ const coverStyle = computed(() => {
 
     .cover {
       width: @cover-width;
+
+      @apply border-(0 r solid blue);
     }
 
     .intro {
