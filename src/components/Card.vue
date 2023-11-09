@@ -22,7 +22,6 @@ function updateZIndex() {
   zIndex.value = nextZIndex.value++
 }
 
-const el = ref<HTMLElement>()
 const rootEl = ref<HTMLElement>()
 const isReverse = ref(false)
 
@@ -41,43 +40,16 @@ function resize() {
 
 useEventListener('resize', resize)
 
-const isHover = useElementHover(rootEl)
-
-const mouse = useMouseInElement(el, {
-  type: 'client',
-  handleOutside: false,
-})
-
-const pos = computed(() => {
-  const { isOutside, elementHeight, elementWidth, elementX, elementY } = mouse
-
-  let xx = 0.5
-  let yy = 0.5
-
-  if (!isOutside.value) {
-    xx = elementX.value / elementWidth.value
-    yy = elementY.value / elementHeight.value
-  }
-
-  const y = yy - 0.5
-  const x = xx - 0.5
-
-  if (isHover.value) {
-    return {
-      x,
-      y,
-    }
-  }
-
-  return {
+const state = reactive({
+  pos: {
     x: 0,
     y: 0,
-  }
+  },
 })
 
 const overlayStyle = computed(() => {
   const range = 20
-  const { x, y } = pos.value
+  const { x, y } = state.pos
 
   return {
     ry: `${-x * range}deg`,
@@ -87,13 +59,34 @@ const overlayStyle = computed(() => {
 
 const coverStyle = computed(() => {
   const range = 10
-  const { x, y } = pos.value
+  const { x, y } = state.pos
 
   return {
     backgroundImage: `url(${props.cover})`,
     backgroundPosition: `calc(50% + ${x * range}px) calc(50% + ${y * range}px)`,
   }
 })
+
+function onMouseEnter(_e: MouseEvent) {
+  updateZIndex()
+}
+
+function onMouseLeave(_e: MouseEvent) {
+  state.pos.x = 0
+  state.pos.y = 0
+}
+
+function onMouseMove(e: MouseEvent) {
+  const el = e.currentTarget as HTMLDivElement
+
+  const rect = el.getBoundingClientRect()
+
+  let x = (e.x - rect.left) / rect.width
+  let y = (e.y - rect.top) / rect.height
+
+  state.pos.x = x - 0.5
+  state.pos.y = y - 0.5
+}
 </script>
 
 <template>
@@ -106,7 +99,12 @@ const coverStyle = computed(() => {
     </div>
 
     <div class="overlay-wrapper">
-      <div class="overlay" @mouseenter="updateZIndex()" ref="el">
+      <div
+        class="overlay"
+        @mouseenter="onMouseEnter"
+        @mouseleave="onMouseLeave"
+        @mousemove="onMouseMove"
+      >
         <div class="cover" :style="coverStyle" />
         <div class="intro h-400px flex-(~ 1 col) w-0 py-6">
           <div class="title text-2xl px-4 font-bold">
