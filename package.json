@@ -23,7 +23,7 @@
     "@types/node": "^20.8.8",
     "@vitejs/plugin-vue": "^4.4.0",
     "less": "^4.2.0",
-    "tsx": "^3.14.0",
+    "tsx": "^4.0.0",
     "typescript": "^5.2.2",
     "typescript-json-schema": "^0.62.0",
     "unocss": "0.57.2",
