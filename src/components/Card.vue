@@ -34,8 +34,7 @@ function resize() {
   const el = rootEl.value
   if (!el) return
 
-  const x = el.offsetLeft + 900
-  isReverse.value = x > window.innerWidth
+  isReverse.value = el.offsetLeft > window.innerWidth / 2
 }
 
 useEventListener('resize', resize)
@@ -138,7 +137,7 @@ function onMouseMove(e: MouseEvent) {
 @cover-width: 300px;
 
 .description {
-  line-height: 1.5em;
+  line-height: 1.7em;
 }
 
 .card {
@@ -190,6 +189,7 @@ function onMouseMove(e: MouseEvent) {
 .cover {
   width: @cover-width * 0.8;
   height: @cover-width * (4/3) * 0.8;
+  @apply border-(0 solid transparent);
 }
 
 .overlay {
