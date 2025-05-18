@@ -3,8 +3,8 @@
 const timelineConfig = [
   {
     date: '公元 525 年',
-    title: '三真法门创立',
-    content: '姜明子创立三真法门',
+    title: '三真法门 创立',
+    content: '姜明子 创立三真法门',
   },
   {
     date: '公元 1854 年',
@@ -13,8 +13,13 @@ const timelineConfig = [
   },
   {
     date: '公元 1906 年',
-    title: '三真法门 收徒',
-    content: '三真法门 217 代门主 马朝 收徒 高皓光，故事就此开始',
+    title: '高皓光',
+    content: '三真法门 217 代门主 马朝 收徒 高皓光',
+  },
+  {
+    date: '公元 2020 年',
+    title: '段星炼',
+    content: '三真法门 221 代门主 周六晴 的师弟 段星炼',
   },
 ]
 </script>
