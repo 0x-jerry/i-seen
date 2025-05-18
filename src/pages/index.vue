@@ -3,7 +3,7 @@ import { db } from '@/data'
 </script>
 
 <template>
-  <div class="text-4xl mt-30px ml-50px">I Seen</div>
+  <div class="text-4xl mt-4 ml-50px mb-3">I Seen</div>
   <hr class="border-0 border-(0 t solid gray-3) mb-4" />
   <div class="px-50px flex flex-wrap gap-8 justify-between">
     <Card v-for="item in db" v-bind="item" />

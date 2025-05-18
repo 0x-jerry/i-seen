@@ -1,4 +1,4 @@
-import { createApp, type Plugin } from 'vue'
+import { type Plugin, createApp } from 'vue'
 import App from './App.vue'
 
 import 'overlayscrollbars/overlayscrollbars.css'

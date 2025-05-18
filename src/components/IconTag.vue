@@ -1,13 +1,10 @@
 <script lang='ts' setup>
-
 export interface IconTagProps {
   icon: string
   color?: string
 }
 
 defineProps<IconTagProps>()
-
-
 </script>
 
 <template>

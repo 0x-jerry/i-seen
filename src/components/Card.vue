@@ -16,12 +16,14 @@ const props = defineProps<CardProps>()
 
 const zIndex = ref(nextZIndex.value)
 
-const linkIconConfig: Record<string, { icon: string, color: string }> = {
+const linkIconConfig: Record<string, { icon: string; color: string }> = {
   douban: {
-    icon: 'i-tabler:brand-douban', color: 'green'
+    icon: 'i-tabler:brand-douban',
+    color: 'green',
   },
   baike: {
-    icon: 'i-tabler:brand-baidu', color: 'blue'
+    icon: 'i-tabler:brand-baidu',
+    color: 'blue',
   },
   default: { icon: 'i-mdi:link', color: 'blue' },
 }

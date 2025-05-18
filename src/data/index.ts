@@ -1,5 +1,5 @@
-import type { SharedItem } from '../../data/type'
 import dataRaw from '../../data/db.json'
+import type { SharedItem } from '../../data/type'
 
 export const db: SharedItem[] = dataRaw
 

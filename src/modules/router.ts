@@ -1,6 +1,6 @@
 import generatedRoutes from 'virtual:generated-pages'
+import type { Plugin } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { Plugin } from 'vue'
 
 export const install: Plugin = (app) => {
   const routes = generatedRoutes
