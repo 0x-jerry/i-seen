@@ -2,8 +2,8 @@ import { createApp, type Plugin } from 'vue'
 import App from './App.vue'
 
 import 'overlayscrollbars/overlayscrollbars.css'
-import 'normalize.css'
 import './styles/global.scss'
+import 'daisyui/theme/light.css'
 import 'uno.css'
 
 const app = createApp(App)

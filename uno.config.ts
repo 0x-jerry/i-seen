@@ -1,5 +1,6 @@
 import {
   defineConfig,
+  presetIcons,
   presetMini,
   transformerDirectives,
   transformerVariantGroup,
@@ -7,6 +8,6 @@ import {
 import { presetDaisyui } from '@0x-jerry/unocss-preset-daisyui'
 
 export default defineConfig({
-  presets: [presetMini(), presetDaisyui()],
+  presets: [presetMini(), presetIcons(), presetDaisyui()],
   transformers: [transformerDirectives(), transformerVariantGroup()],
 })

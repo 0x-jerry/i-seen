@@ -9,14 +9,26 @@ export interface CardProps {
   cover: string
   description: string
   tags?: string[]
-  links?: {
-    douban?: string
-  }
+  links?: Record<string, string>
 }
 
 const props = defineProps<CardProps>()
 
 const zIndex = ref(nextZIndex.value)
+
+const linkIconConfig: Record<string, { icon: string, color: string }> = {
+  douban: {
+    icon: 'i-tabler:brand-douban', color: 'green'
+  },
+  baike: {
+    icon: 'i-tabler:brand-baidu', color: 'blue'
+  },
+  default: { icon: 'i-mdi:link', color: 'blue' },
+}
+
+function getIconConfig(name: string) {
+  return linkIconConfig[name] || linkIconConfig.default
+}
 
 function updateZIndex() {
   zIndex.value = nextZIndex.value++
@@ -112,9 +124,9 @@ function onMouseMove(e: MouseEvent) {
             {{ description }}
           </OverlayScrollbarsComponent>
           <div class="links px-4 flex gap-4">
-            <a class="w-24px h-24px rounded-full border-(~ solid current) flex items-center justify-center cursor-pointer text-green-5 hover:text-green-6"
-              :href="links?.douban" target="_blank">
-              <i-mdi-douban />
+            <a v-for="(item, key) in links" :href="item" target="_blank">
+              <IconTag v-bind="getIconConfig(key)" class=" cursor-pointer text-green-5 hover:text-green-6">
+              </IconTag>
             </a>
           </div>
         </div>
