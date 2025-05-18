@@ -4,7 +4,7 @@ const timelineConfig = [
   {
     date: '公元 525 年',
     title: '三真法门创立',
-    content: '',
+    content: '姜明子创立三真法门',
   },
   {
     date: '公元 1854 年',

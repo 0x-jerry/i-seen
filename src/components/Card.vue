@@ -1,9 +1,15 @@
+<script lang="ts">
+export const nextZIndex = ref(1)
+</script>
+
 <script lang="ts" setup>
 import { getTagColor } from '@/data'
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue'
 import Tag from './Tag.vue'
-import { nextZIndex } from './utils'
 import { SharedItem } from '../data/type'
+import { useEventListener } from '@vueuse/core'
+import { onMounted, reactive, computed, ref } from 'vue'
+import IconTag from './IconTag.vue'
 
 export interface CardProps extends SharedItem {
 }
@@ -111,7 +117,7 @@ function onMouseMove(e: MouseEvent) {
       <div class="overlay" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @mousemove="onMouseMove">
         <div class="cover" :style="coverStyle" />
         <div class="intro h-400px flex-(~ 1 col) w-0 py-6">
-          <a v-if="detail" @click="$router.push(`/details/${title}`)"
+          <a v-if="detail" @click="$router.push(`/details/${encodeURIComponent(title)}`)"
             class="title text-2xl px-4 font-bold link link-hover link-primary">
             {{ title }}
           </a>
@@ -127,8 +133,7 @@ function onMouseMove(e: MouseEvent) {
           </OverlayScrollbarsComponent>
           <div class="links px-4 flex gap-4">
             <a v-for="(item, key) in links" :href="item" target="_blank">
-              <IconTag v-bind="getIconConfig(key)" class=" cursor-pointer text-green-5 hover:text-green-6">
-              </IconTag>
+              <IconTag v-bind="getIconConfig(key)" class=" cursor-pointer text-green-5 hover:text-green-6" />
             </a>
           </div>
         </div>

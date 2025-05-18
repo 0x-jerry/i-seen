@@ -17,8 +17,8 @@
     "types": [
       "vitest/globals",
       "vite/client",
-      "vite-plugin-pages/client",
-      "unplugin-icons/types/vue"
+      "unplugin-icons/types/vue",
+      "unplugin-vue-router/client"
     ]
   },
   "include": ["src", "data", "types"]
