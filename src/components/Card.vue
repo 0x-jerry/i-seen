@@ -98,12 +98,7 @@ function onMouseMove(e: MouseEvent) {
     </div>
 
     <div class="overlay-wrapper">
-      <div
-        class="overlay"
-        @mouseenter="onMouseEnter"
-        @mouseleave="onMouseLeave"
-        @mousemove="onMouseMove"
-      >
+      <div class="overlay" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @mousemove="onMouseMove">
         <div class="cover" :style="coverStyle" />
         <div class="intro h-400px flex-(~ 1 col) w-0 py-6">
           <div class="title text-2xl px-4 font-bold">
@@ -112,18 +107,13 @@ function onMouseMove(e: MouseEvent) {
           <div class="tags flex gap-2 px-4 mt-1 opacity-90" v-if="tags?.length">
             <Tag class="text-xs" v-for="item in tags" :color="getTagColor(item)">{{ item }}</Tag>
           </div>
-          <OverlayScrollbarsComponent
-            class="description mt-4 flex-1 h-0 px-4 text-gray-6"
-            :options="{ scrollbars: { autoHide: 'move' } }"
-          >
+          <OverlayScrollbarsComponent class="description mt-4 flex-1 h-0 px-4 text-gray-6"
+            :options="{ scrollbars: { autoHide: 'move' } }">
             {{ description }}
           </OverlayScrollbarsComponent>
           <div class="links px-4 flex gap-4">
-            <a
-              class="w-24px h-24px rounded-full border-(~ solid current) flex items-center justify-center cursor-pointer text-green-5 hover:text-green-6"
-              :href="links?.douban"
-              target="_blank"
-            >
+            <a class="w-24px h-24px rounded-full border-(~ solid current) flex items-center justify-center cursor-pointer text-green-5 hover:text-green-6"
+              :href="links?.douban" target="_blank">
               <i-mdi-douban />
             </a>
           </div>
@@ -133,15 +123,15 @@ function onMouseMove(e: MouseEvent) {
   </div>
 </template>
 
-<style lang="less">
-@cover-width: 300px;
+<style lang="scss">
+$cover-width: 300px;
 
 .description {
   line-height: 1.7em;
 }
 
 .card {
-  width: @cover-width * 0.8;
+  width: $cover-width * 0.8;
 
   &.is-reverse {
     .overlay-wrapper {
@@ -187,14 +177,14 @@ function onMouseMove(e: MouseEvent) {
 }
 
 .cover {
-  width: @cover-width * 0.8;
-  height: @cover-width * (4/3) * 0.8;
+  width: $cover-width * 0.8;
+  height: $cover-width * calc(4/3) * 0.8;
   @apply border-(0 solid transparent);
 }
 
 .overlay {
-  width: @cover-width * 0.8;
-  height: @cover-width * (4/3) * 0.8;
+  width: $cover-width * 0.8;
+  height: $cover-width * calc(4/3) * 0.8;
 
   position: absolute;
   overflow: hidden;
@@ -235,15 +225,15 @@ function onMouseMove(e: MouseEvent) {
 
   &:hover {
     box-shadow: 0 4px 40px rgba(121, 121, 121, 0.154);
-    width: @cover-width + 500px;
-    height: @cover-width * (4/3);
+    width: $cover-width + 500px;
+    height: $cover-width * calc(4/3);
 
     @apply border-blue;
     top: -40px;
     transform: rotateY(v-bind('overlayStyle.ry')) rotateX(v-bind('overlayStyle.rx'));
 
     .cover {
-      width: @cover-width;
+      width: $cover-width;
 
       @apply border-(0 r solid blue);
     }

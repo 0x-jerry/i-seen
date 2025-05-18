@@ -10,5 +10,3 @@ import { db } from '@/data'
     <div class="w-240px h-1px" v-for="_ in 8"></div>
   </div>
 </template>
-
-<style lang="less"></style>

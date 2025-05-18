@@ -1,18 +1,18 @@
-import { createApp, Plugin } from 'vue'
+import { createApp, type Plugin } from 'vue'
 import App from './App.vue'
 
 import 'overlayscrollbars/overlayscrollbars.css'
 import 'normalize.css'
-import './styles/global.less'
+import './styles/global.scss'
 import 'uno.css'
 
 const app = createApp(App)
 
 // install all modules
-Object.values(import.meta.glob<{ install: Plugin }>('./modules/*.ts', { eager: true })).forEach(
-  (m) => {
-    app.use(m.install)
-  },
-)
+Object.values(
+  import.meta.glob<{ install: Plugin }>('./modules/*.ts', { eager: true }),
+).forEach((m) => {
+  app.use(m.install)
+})
 
 app.mount('#app')
