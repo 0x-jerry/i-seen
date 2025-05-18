@@ -6,8 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "gen:schema": "typescript-json-schema data/type.d.ts Schema -o data/schema.json",
-    "gen:db": "tsx data/update.ts"
+    "gen:schema": "typescript-json-schema src/data/type.d.ts Schema -o data/schema.json"
   },
   "dependencies": {
     "@0x-jerry/utils": "^5.0.0",

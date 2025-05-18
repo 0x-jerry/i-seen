@@ -1,38 +1,46 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "definitions": {
-        "SharedItem": {
-            "properties": {
-                "cover": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "links": {
-                    "properties": {
-                        "douban": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
-                },
-                "tags": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "title": {
-                    "type": "string"
-                }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "SharedItem": {
+      "properties": {
+        "cover": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "boolean"
+        },
+        "links": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {
+            "baike": {
+              "type": "string"
             },
-            "type": "object"
+            "douban": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
         }
-    },
-    "items": {
-        "$ref": "#/definitions/SharedItem"
-    },
-    "type": "array"
+      },
+      "type": "object"
+    }
+  },
+  "items": {
+    "$ref": "#/definitions/SharedItem"
+  },
+  "type": "array"
 }
-

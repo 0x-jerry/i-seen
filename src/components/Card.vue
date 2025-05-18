@@ -3,13 +3,9 @@ import { getTagColor } from '@/data'
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue'
 import Tag from './Tag.vue'
 import { nextZIndex } from './utils'
+import { SharedItem } from '../data/type'
 
-export interface CardProps {
-  title: string
-  cover: string
-  description: string
-  tags?: string[]
-  links?: Record<string, string>
+export interface CardProps extends SharedItem {
 }
 
 const props = defineProps<CardProps>()
@@ -28,7 +24,7 @@ const linkIconConfig: Record<string, { icon: string; color: string }> = {
   default: { icon: 'i-mdi:link', color: 'blue' },
 }
 
-function getIconConfig(name: string) {
+function getIconConfig(name: string | number = 'default') {
   return linkIconConfig[name] || linkIconConfig.default
 }
 
@@ -115,7 +111,11 @@ function onMouseMove(e: MouseEvent) {
       <div class="overlay" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @mousemove="onMouseMove">
         <div class="cover" :style="coverStyle" />
         <div class="intro h-400px flex-(~ 1 col) w-0 py-6">
-          <div class="title text-2xl px-4 font-bold">
+          <a v-if="detail" @click="$router.push(`/details/${title}`)"
+            class="title text-2xl px-4 font-bold link link-hover link-primary">
+            {{ title }}
+          </a>
+          <div v-else class="title text-2xl px-4 font-bold">
             {{ title }}
           </div>
           <div class="tags flex gap-2 px-4 mt-1 opacity-90" v-if="tags?.length">
