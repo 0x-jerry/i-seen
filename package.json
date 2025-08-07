@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@0x-jerry/unocss-preset-daisyui": "^0.2.0",
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.0.0",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/tabler": "^1.2.18",
     "@types/node": "^22.15.18",
